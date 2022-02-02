@@ -1,0 +1,115 @@
+:root {
+  --cor-branco-fundo: #f0ecec;
+  --cor-azul-bg: rgb(82, 88, 146);
+  --cor-azul-botoes: rgb(39, 46, 110);
+  --cor-branco-botoes: #e4e2e2;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  background-color: var(--cor-azul-bg);
+  overflow: hidden;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  color: var(--cor-branco-fundo);
+}
+
+.container {
+  background-color: var(--cor-branco-fundo);
+  display: flex;
+  margin: 0 auto;
+  align-items: center;
+  flex-direction: column;
+  width: 28%;
+  height: 75vh;
+  border-radius: 5px;
+}
+
+.calculator-input {
+  width: 85%;
+  height: 8vh;
+  border-radius: 5px;
+  border: 1px solid rgb(48, 47, 47);
+  text-align: right;
+  overflow-y: hidden;
+  overflow-x: auto;
+  margin: 0 auto;
+  margin-top: 0.5em;
+  background-color: var(--cor-branco-botoes);
+  font-size: 2rem;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+button {
+  height: 60px;
+  border: 1px solid rgb(48, 47, 47);
+  border-radius: 5px;
+  font-size: 1.7rem;
+  transition: all 0.2s ease;
+  background-color: var(--cor-branco-botoes);
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: rgb(48, 47, 47);
+  color: var(--cor-branco-botoes);
+}
+
+.operator-button {
+  color: var(--cor-azul-botoes);
+}
+
+.operator-button:hover {
+  color: var(--cor-branco-botoes);
+  background-color: var(--cor-azul-botoes);
+}
+
+.clear-button {
+  color: var(--cor-azul-botoes);
+}
+.clear-button:hover {
+  background-color: var(--cor-azul-botoes);
+  color: var(--cor-branco-botoes);
+}
+
+.equal-button {
+  color: var(--cor-azul-botoes);
+  grid-row-start: 2;
+  grid-row-end: 6;
+  grid-column-start: 4;
+  grid-column-end: 5;
+  height: 100%;
+}
+.equal-button:hover {
+  color: var(--cor-branco-botoes);
+  background-color: var(--cor-azul-botoes);
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 4;
+  grid-gap: 0.5em;
+  width: 85%;
+  margin-top: 2em;
+}
+
+.buttons > *:active::before,
+.buttons > .is-depressed::before {
+  background-color: var(--cor-branco-botoes);
+  bottom: 0;
+  box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.5) inset;
+  content: "";
+  left: 0;
+  opacity: 0.3;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 1;
+}
